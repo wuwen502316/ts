@@ -188,8 +188,8 @@ var tes:keyof Te = "age"
 /*总结
  * 1、is 类型保护，用于判断类型的函数中做类型限制
  * 2、in 类似于js的遍历
- * 3、keyof 可以获取一个对象接口的所有 key值
- * 4、typeof 用于获取某个变量的具体类型
+ * 3、keyof 可以获取一个对象接口的所有 key值，比如keyof Array获取的是数组prototype上原型链的各种方法；keyof Object获取对象的键值对的属性集合
+ * 4、typeof 用于获取某个变量的具体类型  eg:var A = {name:"1",age:12};type B = typeof A ;  ===>>>> type B = {name:string,age:number}
  * 5、extends用于接口与接口、类与类、接口与类之间的继承
  * 6、implements用于类与类、类与接口之间的实现
  * 注意： extends类似于es6的extends，implements没有继承效果的，但是要求子类上必须需有父类的属性和方法，更倾向于限制子类的结构！
