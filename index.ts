@@ -1,3 +1,12 @@
+
+
+//在线练习typeScript的 URL:https://www.typescriptlang.org/zh/play?#code/C4TwDgpgBAYgdgYygXigCjgQwLYQFwDOwATgJZwDmANFJhfnAK7YBGExAlCgHzqaEly1Fniat2XZLzgQAbuwDcAKCWhIsFFADeSqHwFlKVEWLac8UWQHtSAE2UBfVeGgwAjJp16MOfEUPUdAzMZhwWMEpOSgA2EMBQAGZwePBIqAmMiMCkVnA+uFRBHF5QxHGMxHCJmQjZuWiYxsW6eqXllVBuLU5RSWgARG79VABMHANDoxwKQA
+// https://blog.csdn.net/huangfengnt/article/details/124734974       --- ts当中的infer关键字
+// https://www.jianshu.com/p/707a304d7752      ---- TS进阶之infer
+// https://blog.csdn.net/lcl130/article/details/125214788          ---- ts的keyof
+// http://www.icodebang.com/article/329962          ------ ts中的几个关键字
+// https://blog.csdn.net/yanzi_0216/article/details/115209363?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-115209363-blog-119850296.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-115209363-blog-119850296.pc_relevant_aa&utm_relevant_index=1                  ------------ TS 中的 keyof 和 typeof 操作符_yanzi_0216的博客-CSDN博客_ts typeof 
+
 type GenericIdentityFn<T,K,L> = {
     (index:T,index1:K):L//匹配：有两个参数且参数的type为T,K，且返回值的泛型是L的函数
 }
