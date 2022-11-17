@@ -256,6 +256,46 @@ let b:A<[string]> = "1"
 
 
 
+//***********************************************************************************************************递归TS
+type DeepZhangkai<T> = T extends object ? {[K in keyof T] ?: DeepZhangkai<T[K]>} : T;
+type Sd = {
+  code:number,
+  body:{
+   msg:any,
+   res:{
+    id:number,
+    mssageOfPerson:{
+      name:string,
+      age:number,
+      sex:string
+    }
+   } 
+  }
+}
+type R = {
+  name ?: string,
+  age: number
+}
+let r:R = {age:2}
 
+type Res = DeepZhangkai<Sd>//    ?: 为可选的意思即属性的属性值可以是设定的指也可以 没有该属性值===>>object[index] = undefined
+// 上式等同于 ===>>>>
+// type Res = {
+//     code?: number | undefined;
+//     body?: {
+//         msg?: any;
+//         res?: {
+//             id?: number | undefined;
+//             mssageOfPerson?: {
+//                 name?: string | undefined;
+//                 age?: number | undefined;
+//                 sex?: string | undefined;
+//             } | undefined;
+//         } | undefined;
+//     } | undefined;
+// }
+let res:Res = {
+  code:1
+}
 
 
