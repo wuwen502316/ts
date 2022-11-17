@@ -243,6 +243,16 @@ var tes:keyof Te = "age"
  */
 
 
+type A<T> = T extends Array<infer U> ? U :T;
+
+let a:A<string> = "Sdfsdf";// ===>>>type A<string> = string
+// 注释：infer U 等价于 未知数 \ Array<infer U> 等价于 Array<未知> 也等价于 未知[]
+// A<string> = T extends Array<未知infer U> ? 未知 U : T
+let b:A<[string]> = "1"
+
+// type StrArr = [string];let arr:StrArr = ["1","s"]会报错。 因为 type StrArr只能支持 只有一个元素的数组
+
+
 
 
 
