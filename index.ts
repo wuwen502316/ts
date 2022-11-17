@@ -202,20 +202,43 @@ var tes:keyof Te = "age"
  * 5、extends用于接口与接口、类与类、接口与类之间的继承
  * 6、implements用于类与类、类与接口之间的实现
  * 注意： extends类似于es6的extends，implements没有继承效果的，但是要求子类上必须需有父类的属性和方法，更倾向于限制子类的结构！
- *
+ 
  * 7、type 和 interface的区别
- *  7-1、 type可以定义单个变量类型、联合类型、对象，interface只能定义对象；
- *  7-2、 type可以使用implements,但是不可以使用extends关键字,interface两者都可以使用;
- *  7-3、 type不可以重复声明，interface可以重复声明(声明合并);
- *  7-4、 type可以动态计算属性，interface则不可以
- * 
+     *  7-1、 type可以定义单个变量类型、联合类型、对象，interface只能定义对象；
+     *  7-2、 type可以使用implements,但是不可以使用extends关键字,interface两者都可以使用;
+     *  7-3、 type不可以重复声明，interface可以重复声明(声明合并);
+     *  7-4、 type可以动态计算属性，interface则不可以
+  
  * 8、infer用于提取属性,具体的返回类型是依据三元表达式的返回而定。
+ 
+    type Fnc = (name:string, age:number) => (a:string,b:number) => void;
+    // 等价于
+    // type Fnc_1 = {
+    //   (a:string, b:number): void
+    // }
+    // type Fnc_2 = {
+    //   (name:string, age:number): Fnc_1
+    // }
+
+    type getFucReturn<T> = T extends (a:any, b:any) => infer U ? U : T;
+
+    type s = getFucReturn<Fnc>;
+    // 等价于type s = getFucReturn<Fnc_2>
+    let fn1:s = function(a,b){
+      return 1
+    }
+    fn1("1",2)
+ 
+ 
  * 9、Pick用于在定义好的类型中取出特性的类型
+ 
  * 10、Record 可以获得根据 K 中所有可能值来设置 key 以及 value 的类型
+ 
  * 11、ReturnType 用来获取函数的返回值的类型
+ 
  * 12、Partial、DeepPartial、Required
- *   12-1：Partial 功能是将类型的属性变成可选
- * 
+    *   12-1：Partial 功能是将类型的属性变成可选
+  
  * 参考：http://www.icodebang.com/article/329962
  */
 
