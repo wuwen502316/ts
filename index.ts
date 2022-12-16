@@ -34,7 +34,7 @@ var a1:GenericIdentityFn<number,number,string> = (name:number,age:number):string
 // 2022-11-11
 // 普通的string | number | boolean | Function | object等等基础类型
 type A = string;
-const a:A = "12323";
+const a:A = "12323"; 
 
 /*--------------------分割线---------------------------*/
 
